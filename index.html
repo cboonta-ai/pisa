@@ -73,20 +73,20 @@
 
     
     <script>
-        // Classroom data
+        // Classroom data with colors
         const classrooms = [
-            { id: 1, link: 'https://pisa.keranos.tech/dosurvey?bid=54' },
-            { id: 2, link: 'https://pisa.keranos.tech/dosurvey?bid=56' },
-            { id: 3, link: 'https://pisa.keranos.tech/dosurvey?bid=58' },
-            { id: 4, link: 'https://pisa.keranos.tech/dosurvey?bid=60' },
-            { id: 5, link: 'https://pisa.keranos.tech/dosurvey?bid=62' },
-            { id: 6, link: 'https://pisa.keranos.tech/dosurvey?bid=64' },
-            { id: 7, link: 'https://pisa.keranos.tech/dosurvey?bid=67' },
-            { id: 8, link: 'https://pisa.keranos.tech/dosurvey?bid=70' },
-            { id: 9, link: 'https://pisa.keranos.tech/dosurvey?bid=72' },
-            { id: 10, link: 'https://pisa.keranos.tech/dosurvey?bid=75' },
-            { id: 11, link: 'https://pisa.keranos.tech/dosurvey?bid=77' },
-            { id: 12, link: 'https://pisa.keranos.tech/dosurvey?bid=78' }
+            { id: 1, link: 'https://pisa.keranos.tech/dosurvey?bid=54', color: 'from-red-500 to-pink-600', hoverColor: 'from-red-600 to-pink-700', textColor: 'text-red-700', hoverTextColor: 'text-red-900' },
+            { id: 2, link: 'https://pisa.keranos.tech/dosurvey?bid=56', color: 'from-blue-500 to-cyan-600', hoverColor: 'from-blue-600 to-cyan-700', textColor: 'text-blue-700', hoverTextColor: 'text-blue-900' },
+            { id: 3, link: 'https://pisa.keranos.tech/dosurvey?bid=58', color: 'from-emerald-500 to-green-600', hoverColor: 'from-emerald-600 to-green-700', textColor: 'text-emerald-700', hoverTextColor: 'text-emerald-900' },
+            { id: 4, link: 'https://pisa.keranos.tech/dosurvey?bid=60', color: 'from-violet-500 to-purple-600', hoverColor: 'from-violet-600 to-purple-700', textColor: 'text-violet-700', hoverTextColor: 'text-violet-900' },
+            { id: 5, link: 'https://pisa.keranos.tech/dosurvey?bid=62', color: 'from-amber-500 to-yellow-600', hoverColor: 'from-amber-600 to-yellow-700', textColor: 'text-amber-700', hoverTextColor: 'text-amber-900' },
+            { id: 6, link: 'https://pisa.keranos.tech/dosurvey?bid=64', color: 'from-rose-500 to-pink-600', hoverColor: 'from-rose-600 to-pink-700', textColor: 'text-rose-700', hoverTextColor: 'text-rose-900' },
+            { id: 7, link: 'https://pisa.keranos.tech/dosurvey?bid=67', color: 'from-teal-500 to-cyan-600', hoverColor: 'from-teal-600 to-cyan-700', textColor: 'text-teal-700', hoverTextColor: 'text-teal-900' },
+            { id: 8, link: 'https://pisa.keranos.tech/dosurvey?bid=70', color: 'from-orange-500 to-red-600', hoverColor: 'from-orange-600 to-red-700', textColor: 'text-orange-700', hoverTextColor: 'text-orange-900' },
+            { id: 9, link: 'https://pisa.keranos.tech/dosurvey?bid=72', color: 'from-indigo-500 to-blue-600', hoverColor: 'from-indigo-600 to-blue-700', textColor: 'text-indigo-700', hoverTextColor: 'text-indigo-900' },
+            { id: 10, link: 'https://pisa.keranos.tech/dosurvey?bid=75', color: 'from-lime-500 to-green-600', hoverColor: 'from-lime-600 to-green-700', textColor: 'text-lime-700', hoverTextColor: 'text-lime-900' },
+            { id: 11, link: 'https://pisa.keranos.tech/dosurvey?bid=77', color: 'from-sky-500 to-blue-600', hoverColor: 'from-sky-600 to-blue-700', textColor: 'text-sky-700', hoverTextColor: 'text-sky-900' },
+            { id: 12, link: 'https://pisa.keranos.tech/dosurvey?bid=78', color: 'from-fuchsia-500 to-purple-600', hoverColor: 'from-fuchsia-600 to-purple-700', textColor: 'text-fuchsia-700', hoverTextColor: 'text-fuchsia-900' }
         ];
 
         // Generate classroom cards
@@ -100,12 +100,12 @@
             
             card.innerHTML = `
                 <div class="text-center">
-                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center group-hover:from-orange-600 group-hover:to-red-700 transition-all duration-300">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br ${classroom.color} rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
                         <span class="text-2xl font-bold text-white">ม.2/${classroom.id}</span>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">ห้อง ${classroom.id}</h3>
                     <p class="text-gray-600 text-sm mb-4">ชั้นมัธยมศึกษาปีที่ 2</p>
-                    <div class="flex items-center justify-center text-orange-600 font-medium group-hover:text-orange-700">
+                    <div class="flex items-center justify-center ${classroom.textColor} font-medium group-hover:${classroom.hoverTextColor} group-hover:font-semibold">
                         <span>คลิกเพื่อเริ่มทำแบบสอบถาม</span>
                         <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
